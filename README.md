@@ -23,25 +23,18 @@ Simple Weather app created using django
    pip install -r requirements.txt
    ```
 
-4. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   ```
-   Add your OpenWeatherMap API key to the `.env` file
-
-5. Run migrations:
+4. Run migrations:
    ```bash
    python manage.py migrate
    ```
 
-6. Start the development server:
+5. Start the development server:
    ```bash
    python manage.py runserver
    ```
 
 ## Features
 
-- Real-time weather data
 - Search for weather by city
 - Displays temperature, humidity, wind speed, and more
 
