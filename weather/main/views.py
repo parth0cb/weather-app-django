@@ -22,7 +22,7 @@ def index(request):
         # --- Step 2: Fetch weather ---
         weather_url = (
             f"https://api.open-meteo.com/v1/forecast?"
-            f"latitude={lat}&longitude={lon}&current_weather=true"
+            f"latitude={lat}&longitude={lon}&current_weather=true&timezone={location.get('timezone', 'auto')}"
         )
         weather_response = requests.get(weather_url)
         weather_data = weather_response.json().get("current_weather")
@@ -33,6 +33,7 @@ def index(request):
                 "latitude": lat,
                 "longitude": lon,
                 "country_code": location.get("country_code", ""),
+                "timezone": location.get("timezone", "UTC"),
             })
 
     context = {
