@@ -6,7 +6,8 @@ def index(request):
     Renders weather data into the template.
     Example: /?city=London
     """
-    city = request.GET.get('city', 'New York')
+    # city = request.GET.get('city', 'Delhi')
+    city = request.GET.get('city', 'Mumbai')
     weather_data = None
 
     # --- Step 1: Get coordinates ---
